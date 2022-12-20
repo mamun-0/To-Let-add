@@ -6,7 +6,10 @@ const proprietorSchema = new Schema({
   buildingType: { type: String, required: true },
   seatAvailability: { type: Number, required: true },
   onlyFor: { type: String, required: true },
-  contact: { type: Number, min: [11, 'Phone number must be eleven digits'] },
+  contact: {
+    type: String,
+    minLength: [11, 'Phone number must be eleven digits'],
+  },
   image: { type: String, required: true },
   description: { type: String, required: true },
 });
