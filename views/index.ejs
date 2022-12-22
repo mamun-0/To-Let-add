@@ -11,31 +11,43 @@
       integrity="sha384-xOolHFLEh07PJGoPkLv1IbcEPTNtaed2xpHsD9ESMhqIYd0nLMwNLD69Npy4HI+N"
       crossorigin="anonymous"
     />
-    <link rel="stylesheet" href="../public/css/style.css" />
+    <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
     <h2 class="text-center">Mess near bsmrstu campus</h2>
-    <div class="container">
+    <div class="container-fluid">
       <div class="row">
-        <div class="col-md-4">
-          <div class="card mb-3" style="max-width: 540px">
+        <% for(let proprietor of proprietors ){ %>
+        <div class="col-md-6">
+          <div class="card mb-3">
             <div class="row no-gutters">
-              <div class="col-md-4">
-                <img src="..." alt="..." />
+              <div class="col-md-5">
+                <img
+                  class="card-img"
+                  src="<%= proprietor.image %>"
+                  alt="building-img"
+                />
               </div>
-              <div class="col-md-8">
+              <div class="col-md-7">
                 <div class="card-body">
-                  <h5 class="card-title">Card title</h5>
-                  <p class="card-text">
-                    This is a wider card with supporting text below as a natural
-                    lead-in to additional content. This content is a little bit
-                    longer.
-                  </p>
+                  <h5 class="card-title">
+                    Title: <%= proprietor.buildingName %>
+                  </h5>
+                  <ul>
+                    <li>Building Type: <%= proprietor.buildingType %></li>
+                    <li>
+                      Seat Availability: <%= proprietor.seatAvailability %>
+                    </li>
+                    <li>Only For: <%= proprietor.onlyFor %></li>
+                    <li>Contact: <%= proprietor.contact %></li>
+                  </ul>
+                  <a href="" class="btn btn-primary">Show Details</a>
                 </div>
               </div>
             </div>
           </div>
         </div>
+        <% } %>
       </div>
     </div>
     <script
