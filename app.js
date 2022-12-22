@@ -13,7 +13,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 app.get('/show', async (req, res) => {
   const proprietors = await Proprietor.find({});
-  res.render('mess/index', { proprietors });
+  res.render('index', { proprietors });
 });
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
