@@ -7,6 +7,8 @@ mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
   console.log('Database connected');
 });
 
+//serving static files
+app.use(express.static(path.join(__dirname, 'public')));
 // set view engine for ejs
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
