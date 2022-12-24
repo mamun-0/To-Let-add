@@ -24,6 +24,12 @@ app.get('/mess', async (req, res) => {
 app.get('/mess/new', (req,res)=>{
   res.render('newMess');
 });
+app.post('/mess', async (req,res)=>{
+  const {mess} = req.body;
+  const proprietor = new Proprietor(mess);
+  await proprietor.save();
+  res.redirect('/mess');
+})
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
