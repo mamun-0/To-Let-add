@@ -10,6 +10,8 @@ mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
 
 //serving static files
 app.use(express.static(path.join(__dirname, 'public')));
+//middleware
+app.use(express.urlencoded({extended:true}));
 // set view engine for ejs
 app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
