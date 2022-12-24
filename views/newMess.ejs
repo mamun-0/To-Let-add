@@ -1,0 +1,53 @@
+<% layout('layout/boilerplate')%>
+<div class="container my-3">
+    <h2 class="display-4 text-center">Create new mess</h2>
+    <form action="/mess" method="POST">
+        <div class="form-gorup my-3">
+            <label for="name">Building Name</label>
+            <input id="name" type="text" name="mess[buildingName]" class="form-control" placeholder="Building name">
+        </div>
+        <div class="form-group my-3">
+            <label>Select building type</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="mess[buildingType]" id="radio-mess" value="option1" checked>
+                <label class="form-check-label" for="radio-mess">Mess</label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="mess[buildingType]" id="radio-flat" value="option2">
+            <label class="form-check-label" for="radio-flat">
+                Flat
+            </label>
+            </div>
+        </div>
+        <div class="form-group my-3">
+            <label for="seatAvailability">Seat Availability</label>
+            <input type="number" class="form-control" min="0" max="40">
+        </div>
+        <div class="form-group my-3">
+            <label>Only For</label>
+            <div class="form-check">
+                <input class="form-check-input" type="radio" name="mess[onlyFor]" id="radio-male" value="option1" checked>
+                <label class="form-check-label" for="radio-male">Male</label>
+            </div>
+            <div class="form-check">
+            <input class="form-check-input" type="radio" name="mess[onlyFor]" id="radio-female" value="option2">
+            <label class="form-check-label" for="radio-female">
+                Female
+            </label>
+            </div>
+        </div>
+        <div class="form-group my-3">
+            <label for="contact">Contact Number</label>
+            <input class="form-control" type="text" name="mess[contact]" id="contact" maxlength="11" minlength="11">
+        </div>
+        <div class="form-group my-3">
+            <label for="img">Image URL</label>
+            <input class="form-control" name="mess[image]" type="text">
+        </div>
+        <div class="form-group my-3">
+            <label for="description">Description</label>
+            <textarea name="mess[description]" id="description" cols="15" rows="5" class="form-control"></textarea>
+        </div>
+        <button class="btn btn-success">Submit</button>
+    </form>
+</div>
