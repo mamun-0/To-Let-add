@@ -15,7 +15,7 @@ app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
-app.get('/show', async (req, res) => {
+app.get('/mess', async (req, res) => {
   const proprietors = await Proprietor.find({});
   res.render('index', { proprietors });
 });
