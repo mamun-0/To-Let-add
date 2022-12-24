@@ -19,6 +19,9 @@ app.get('/mess', async (req, res) => {
   const proprietors = await Proprietor.find({});
   res.render('index', { proprietors });
 });
+app.get('/mess/new', (req,res)=>{
+  res.render('newMess');
+});
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
