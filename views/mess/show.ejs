@@ -1,0 +1,27 @@
+<% layout('layout/boilerplate')%>
+
+<div class="container my-4">
+    <div class="row justify-content-center">
+    <div class="col-6">
+    <div class="card">
+    <img class="card-img-top rounded" src="<%= proprietor.image %>" alt="building-image">
+    </div>
+    <div class="card-body border my-2 shadow-sm">
+        <h5 class="card-title"><b>Building Name : </b><%= proprietor.buildingName %> </h5>
+        <p class="card-text"><b>Description : </b><%= proprietor.description %> </p>
+    </div>
+    <ul class="list-group list-group-flash">
+        <li class="list-group-item"><b>Building Type : </b><%= proprietor.buildingType %> </li>
+        <li class="list-group-item"><b>Set Availability : </b><%= proprietor.seatAvailability %> </li>
+        <li class="list-group-item"><b>Only For : </b><%= proprietor.onlyFor %> </li>
+        <li class="list-group-item"><b>Contact : </b><%= proprietor.contact %> </li>
+    </ul>
+    <div class="mt-2">
+        <a href="/mess/<%=proprietor._id%>/edit" class="btn btn-info mr-2">Edit</a>
+        <form action="/mess" method="POST" class="d-inline">
+            <a href="/mess/<%= proprietor._id %> " class="btn btn-danger">Delete</a>
+        </form>
+    </div>
+    </div>
+   </div>
+</div>
