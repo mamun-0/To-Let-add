@@ -4,6 +4,7 @@ const path = require('path');
 const mongoose = require('mongoose');
 const ejsMate =  require('ejs-mate')
 const Proprietor = require('./models/proprietor');
+const methodOverride = require('method-override');
 mongoose.set('strictQuery', true);
 mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
   console.log('Database connected');
@@ -11,6 +12,7 @@ mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
 
 //middleware
 app.use(express.urlencoded({extended:true}));
+app.use(methodOverride('_method'));
 //serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 // set view engine for ejs
