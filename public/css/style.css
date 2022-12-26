@@ -3,3 +3,7 @@
   height: 100%;
   object-fit: cover;
 }
+.show-card-img{
+  height: 55vh;
+  object-fit: cover;
+}
