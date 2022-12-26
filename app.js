@@ -39,6 +39,12 @@ app.get('/mess/:id', async (req, res) => {
   const proprietor = await Proprietor.findById(id);
   res.render('mess/show', {proprietor});
 });
+
+app.delete('/mess/:id', async (req,res)=>{
+  const {id} = req.params;
+  await Proprietor.findByIdAndDelete(id);
+  res.redirect('/mess');
+})
 app.listen(3000, () => {
   console.log('Server is running on port 3000');
 });
