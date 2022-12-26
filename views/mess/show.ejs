@@ -18,8 +18,8 @@
     </ul>
     <div class="mt-2">
         <a href="/mess/<%=proprietor._id%>/edit" class="btn btn-info mr-2">Edit</a>
-        <form action="/mess" method="POST" class="d-inline">
-            <a href="/mess/<%= proprietor._id %>" class="btn btn-danger">Delete</a>
+        <form action="/mess/<%= proprietor._id %>?_method=DELETE" method="POST" class="d-inline">
+            <button class="btn btn-danger">Delete</button>
         </form>
     </div>
     </div>
