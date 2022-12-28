@@ -39,7 +39,17 @@ app.get('/mess/:id', async (req, res) => {
   const proprietor = await Proprietor.findById(id);
   res.render('mess/show', {proprietor});
 });
-
+app.get('/mess/:id/edit',async (req,res)=>{
+  const {id} = req.params;
+  const proprietor = await Proprietor.findById(id);
+  res.render('mess/edit',{proprietor});
+})
+app.put('/mess/:id', async (req,res)=>{
+  const {mess} = req.body;
+  const {id} = req.params;
+  await Proprietor.findByIdAndUpdate(id, {...mess});
+  res.redirect(`/mess/${id}`);
+})
 app.delete('/mess/:id', async (req,res)=>{
   const {id} = req.params;
   await Proprietor.findByIdAndDelete(id);
