@@ -8,7 +8,7 @@ mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
 const proprietorArr = [
   {
     buildingName: 'Doctor Bari Mess',
-    buildingType: 'Mess',
+    buildingType: 'mess',
     seatAvailability: 21,
     onlyFor: 'Male',
     contact: '01798668299',
@@ -19,7 +19,7 @@ const proprietorArr = [
   },
   {
     buildingName: 'White House Mess',
-    buildingType: 'Mess',
+    buildingType: 'mess',
     seatAvailability: 30,
     onlyFor: 'Male',
     contact: '01798668299',
@@ -30,7 +30,7 @@ const proprietorArr = [
   },
   {
     buildingName: 'Green House Mess',
-    buildingType: 'Mess',
+    buildingType: 'mess',
     seatAvailability: 13,
     onlyFor: 'Male',
     contact: '01798668299',
@@ -41,7 +41,7 @@ const proprietorArr = [
   },
   {
     buildingName: 'Walton Building',
-    buildingType: 'Flat',
+    buildingType: 'mess',
     seatAvailability: 17,
     onlyFor: 'Male',
     contact: '01798668299',
@@ -52,7 +52,7 @@ const proprietorArr = [
   },
   {
     buildingName: 'Unknown Mess',
-    buildingType: 'Mess',
+    buildingType: 'mess',
     seatAvailability: 14,
     onlyFor: 'Female',
     contact: '01798668299',
