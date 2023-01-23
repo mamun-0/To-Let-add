@@ -7,6 +7,7 @@ const methodOverride = require('method-override');
 const messRouter = require('./router/mess');
 const AppError = require('./utils/AppError');
 const session =  require('express-session');
+const flash = require('connect-flash');
 mongoose.set('strictQuery', false);
 mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
   console.log('Database connected');
@@ -25,6 +26,12 @@ app.use(session({
     maxAge: 7*24*60*60*1000
   }
 }));
+app.use(flash());
+app.use((req,res,next)=>{
+  res.locals.success = req.flash('success');
+  res.locals.error = req.flash('error');
+  next();
+})
 //serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 // set view engine for ejs
