@@ -14,6 +14,14 @@
     <link rel="stylesheet" href="/css/style.css" />
   </head>
   <body>
+    <% if(success.length){ %>
+  <div class="alert alert-warning alert-dismissible fade show my-0" role="alert">
+  <strong><%= success %> </strong>
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+  <span aria-hidden="true">&times;</span>
+  </button>
+  </div>
+    <% } %>
     <%- include('../partials/navbar') %>
     <%- body %> 
 <script
