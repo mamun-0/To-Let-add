@@ -8,6 +8,9 @@ const messRouter = require('./router/mess');
 const AppError = require('./utils/AppError');
 const session =  require('express-session');
 const flash = require('connect-flash');
+const passport = require('passport');
+const localStrategy = require('passport-local');
+const User = require('./models/user');
 mongoose.set('strictQuery', false);
 mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
   console.log('Database connected');
@@ -31,7 +34,16 @@ app.use((req,res,next)=>{
   res.locals.success = req.flash('success');
   res.locals.error = req.flash('error');
   next();
-})
+});
+
+//PassportJs middleware
+app.use(passport.initialize());
+app.use(passport.session());
+
+passport.use(new localStrategy(User.authenticate()));
+passport.serializeUser(User.serializeUser());
+passport.deserializeUser(User.deserializeUser());
+
 //serving static files
 app.use(express.static(path.join(__dirname, 'public')));
 // set view engine for ejs
@@ -39,6 +51,7 @@ app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+//Router
 app.use('/mess', messRouter);
 
 app.all('*',(req,res,next)=>{
