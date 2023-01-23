@@ -27,6 +27,7 @@ router.post(
     }
     const proprietor = new Proprietor(mess);
     await proprietor.save();
+    req.flash('success', 'New mess created successfully.');
     res.redirect('/mess');
   })
 );
@@ -53,6 +54,7 @@ router.put(
     const { mess } = req.body;
     const { id } = req.params;
     await Proprietor.findByIdAndUpdate(id, { ...mess });
+    req.flash('success','successfully edited.');
     res.redirect(`/mess/${id}`);
   })
 );
@@ -61,6 +63,7 @@ router.delete(
   wrapAsync(async (req, res) => {
     const { id } = req.params;
     await Proprietor.findByIdAndDelete(id);
+    req.flash('success', 'successfully deleted.');
     res.redirect('/mess');
   })
 );
