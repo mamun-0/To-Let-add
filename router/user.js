@@ -25,9 +25,11 @@ router.post('/register', wrapAsync(async (req,res, next)=>{
 router.get('/login', (req,res)=>{
     res.render('user/login');
 });
-router.post('/login', passport.authenticate('local',{failureFlash:true, failureRedirect:'/user/login'}), (req, res)=>{
+router.post('/login', passport.authenticate('local',{failureFlash:true, failureRedirect:'/user/login', keepSessionInfo:true}), (req, res)=>{
+   const redirectUrl = req.session.returnTo || '/mess';
+   delete req.session.returnTo; 
    req.flash('success', 'Welcome back!');
-   res.redirect('/mess'); 
+   res.redirect(redirectUrl);
 });
 router.get('/logout', (req,res)=>{
     req.logout(function(err){
