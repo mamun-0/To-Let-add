@@ -7,3 +7,6 @@
   height: 55vh;
   object-fit: cover;
 }
+.bg-dark{
+  background-color: #000 !important;
+}
