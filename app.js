@@ -5,6 +5,7 @@ const mongoose = require('mongoose');
 const ejsMate =  require('ejs-mate')
 const methodOverride = require('method-override');
 const messRouter = require('./router/mess');
+const userRouter = require('./router/user');
 const AppError = require('./utils/AppError');
 const session =  require('express-session');
 const flash = require('connect-flash');
@@ -29,12 +30,6 @@ app.use(session({
     maxAge: 7*24*60*60*1000
   }
 }));
-app.use(flash());
-app.use((req,res,next)=>{
-  res.locals.success = req.flash('success');
-  res.locals.error = req.flash('error');
-  next();
-});
 
 //PassportJs middleware
 app.use(passport.initialize());
@@ -43,6 +38,14 @@ app.use(passport.session());
 passport.use(new localStrategy(User.authenticate()));
 passport.serializeUser(User.serializeUser());
 passport.deserializeUser(User.deserializeUser());
+
+app.use(flash());
+app.use((req, res, next) => {
+  res.locals.currentUser = req.user;
+  res.locals.success = req.flash('success');
+  res.locals.error = req.flash('error');
+  next();
+});
 
 //serving static files
 app.use(express.static(path.join(__dirname, 'public')));
@@ -53,6 +56,7 @@ app.set('views', path.join(__dirname, 'views'));
 
 //Router
 app.use('/mess', messRouter);
+app.use('/user', userRouter);
 
 app.all('*',(req,res,next)=>{
   next(new AppError(404, "Page not found"));
