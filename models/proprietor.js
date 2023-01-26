@@ -1,10 +1,13 @@
-const { string, number } = require('joi');
 const mongoose = require('mongoose');
 const { Schema } = mongoose;
 
 const proprietorSchema = new Schema({
   buildingName: String,
   buildingType: String,
+  author:{
+    type: Schema.Types.ObjectId,
+    ref:'User'
+  },
   seatAvailability: Number,
   onlyFor: String,
   contact: String,

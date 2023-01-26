@@ -23,6 +23,7 @@ router.post(
   wrapAsync(async (req, res) => {
     const { mess } = req.body;
     const proprietor = new Proprietor(mess);
+    proprietor.author = req.user._id;
     await proprietor.save();
     req.flash('success', 'New mess created successfully.');
     res.redirect('/mess');
@@ -33,7 +34,7 @@ router.get(
   '/:id',
   wrapAsync(async (req, res) => {
     const { id } = req.params;
-    const proprietor = await Proprietor.findById(id);
+    const proprietor = await Proprietor.findById(id).populate('author');
     res.render('mess/show', { proprietor });
   })
 );

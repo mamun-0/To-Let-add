@@ -15,6 +15,7 @@
         <li class="list-group-item"><b>Set Availability : </b><%= proprietor.seatAvailability %> </li>
         <li class="list-group-item"><b>Only For : </b><%= proprietor.onlyFor %> </li>
         <li class="list-group-item"><b>Contact : </b><%= proprietor.contact %> </li>
+        <li class="list-group-item"><b>Submitted by : </b><%= proprietor.author.username %> </li>
     </ul>
     <div class="mt-2">
         <a href="/mess/<%=proprietor._id%>/edit" class="btn btn-info mr-2">Edit</a>
