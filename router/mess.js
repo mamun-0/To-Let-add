@@ -3,7 +3,7 @@ const router = express.Router({mergeParams:true});
 const wrapAsync = require('../utils/wrapAsync');
 const Proprietor = require('../models/proprietor');
 const { isLoggedin } = require('../middleware/middleware');
-const { proprietorSchema, validPhone } = require('../middleware/middleware');
+const { proprietorSchema, validPhone, isAuthor } = require('../middleware/middleware');
 
 router.get('/', wrapAsync(async (req, res) => {
     const proprietors = await Proprietor.find({});
@@ -41,6 +41,7 @@ router.get(
 router.get(
   '/:id/edit',
   isLoggedin,
+  isAuthor,
   wrapAsync(async (req, res) => {
     const { id } = req.params;
     const proprietor = await Proprietor.findById(id);
@@ -50,6 +51,7 @@ router.get(
 router.put(
   '/:id',
   isLoggedin,
+  isAuthor,
   proprietorSchema,
   validPhone,
   wrapAsync(async (req, res) => {
@@ -63,6 +65,7 @@ router.put(
 router.delete(
   '/:id',
   isLoggedin,
+  isAuthor,
   wrapAsync(async (req, res) => {
     const { id } = req.params;
     await Proprietor.findByIdAndDelete(id);
