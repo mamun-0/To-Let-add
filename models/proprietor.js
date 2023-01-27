@@ -11,7 +11,10 @@ const proprietorSchema = new Schema({
   seatAvailability: Number,
   onlyFor: String,
   contact: String,
-  image: String,
+  image: {
+    path : String,
+    filename : String
+  },
   description: String,
 });
 
