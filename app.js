@@ -1,13 +1,14 @@
+if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 const express = require('express');
 const app = express();
 const path = require('path');
 const mongoose = require('mongoose');
-const ejsMate =  require('ejs-mate')
+const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const messRouter = require('./router/mess');
 const userRouter = require('./router/user');
 const AppError = require('./utils/AppError');
-const session =  require('express-session');
+const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const localStrategy = require('passport-local');
@@ -18,18 +19,20 @@ mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
 });
 
 //middleware
-app.use(express.urlencoded({extended:true}));
+app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
-app.use(session({
-  secret:"thisisoursillySecret",
-  resave:true,
-  saveUninitialized: true,
-  cookie:{
-    httpOnly:true,
-    expires: Date.now() + 7*24*60*60*1000,
-    maxAge: 7*24*60*60*1000
-  }
-}));
+app.use(
+  session({
+    secret: 'thisisoursillySecret',
+    resave: true,
+    saveUninitialized: true,
+    cookie: {
+      httpOnly: true,
+      expires: Date.now() + 7 * 24 * 60 * 60 * 1000,
+      maxAge: 7 * 24 * 60 * 60 * 1000,
+    },
+  })
+);
 
 //PassportJs middleware
 app.use(passport.initialize());
@@ -58,13 +61,15 @@ app.set('views', path.join(__dirname, 'views'));
 app.use('/mess', messRouter);
 app.use('/user', userRouter);
 
-app.all('*',(req,res,next)=>{
-  next(new AppError(404, "Page not found"));
+app.all('*', (req, res, next) => {
+  next(new AppError(404, 'Page not found'));
 });
-app.use((err,req,res,next)=>{
-  const {status = 500} = err;
-  if(!err.message){err.message = "Somethig went wrong! Try again."}
-  res.status(status).render('error/error',{err});
+app.use((err, req, res, next) => {
+  const { status = 500 } = err;
+  if (!err.message) {
+    err.message = 'Somethig went wrong! Try again.';
+  }
+  res.status(status).render('error/error', { err });
 });
 app.listen(3000, () => {
   console.log('Server is running on port 3000');

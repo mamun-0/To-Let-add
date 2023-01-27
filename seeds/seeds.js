@@ -7,63 +7,45 @@ mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
 
 const proprietorArr = [
   {
-    buildingName: 'Doctor Bari Mess',
+    buildingName: 'Doctor Bari',
     buildingType: 'Mess',
     author: '63d21c9b06c88b264c356351',
-    seatAvailability: 21,
+    seatAvailability: 10,
     onlyFor: 'Male',
     contact: '+8801798668299',
-    image:
-      'https://images.unsplash.com/photo-1628592102751-ba83b0314276?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1097&q=80',
-    description:
-      'Good mess for medium or specialy for poor people. Thanks for owner',
+    image: {
+      path: 'https://res.cloudinary.com/dcyo5k7zd/image/upload/v1674835638/to-Let/xldxmpii7crrsdivmcni.jpg',
+      filename: 'to-Let/xldxmpii7crrsdivmcni',
+    },
+    description: 'Good mess for students. I hope you like it.',
   },
   {
-    buildingName: 'White House Mess',
+    buildingName: 'White House',
     buildingType: 'Mess',
     author: '63d21c9b06c88b264c356351',
-    seatAvailability: 30,
+    seatAvailability: 8,
     onlyFor: 'Male',
     contact: '+8801798668299',
-    image:
-      'https://images.unsplash.com/photo-1628592102751-ba83b0314276?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1097&q=80',
-    description:
-      'Good mess for medium or specialy for poor people. Thanks for owner',
+    image: {
+      path: 'https://res.cloudinary.com/dcyo5k7zd/image/upload/v1674835935/to-Let/pp7hab2o4pejxlmvwmvo.jpg',
+      filename: 'to-Let/pp7hab2o4pejxlmvwmvo',
+    },
+    description: `Good mess for students. I hope you like it.
+                  One think you may dislike, supply water form ponds.
+                  CCTV camera and 24/7 security guard notice.`,
   },
   {
-    buildingName: 'Green House Mess',
+    buildingName: 'Green House',
     buildingType: 'Mess',
-    author: '63d21c9b06c88b264c356351',
-    seatAvailability: 13,
+    author: '63d2235bd4812903fa1ce3b2',
+    seatAvailability: 5,
     onlyFor: 'Male',
     contact: '+8801798668299',
-    image:
-      'https://images.unsplash.com/photo-1628592102751-ba83b0314276?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1097&q=80',
-    description:
-      'Good mess for medium or specialy for poor people. Thanks for owner',
-  },
-  {
-    buildingName: 'Walton Building',
-    buildingType: 'Flat',
-    author: '63d21c9b06c88b264c356351',
-    seatAvailability: 17,
-    onlyFor: 'Male',
-    contact: '+8801798668299',
-    image:
-      'https://images.unsplash.com/photo-1628592102751-ba83b0314276?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1097&q=80',
-    description:
-      'Good mess for medium or specialy for poor people. Thanks for owner',
-  },
-  {
-    buildingName: 'Blue House',
-    buildingType: 'Mess',
-    author: '63d21c9b06c88b264c356351',
-    seatAvailability: 14,
-    onlyFor: 'Male',
-    contact: '+8801798668288',
-    image:
-      'https://images.unsplash.com/photo-1674421338672-3591ba6f176e?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=715&q=80',
-    description: `Blue House is named as the house of south korea's prime minister house.`,
+    image: {
+      path: 'https://res.cloudinary.com/dcyo5k7zd/image/upload/v1674836280/to-Let/hostuomuh0h8xdb6mbsz.avif',
+      filename: 'to-Let/hostuomuh0h8xdb6mbsz',
+    },
+    description: `Better than the best. I'm so confident that you love it.`,
   },
 ];
 
