@@ -10,3 +10,70 @@
 .bg-dark{
   background-color: #000 !important;
 }
+.main-container{
+  width: 100vw;
+  height: 100vh;
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
+  url('https://cdn.discordapp.com/attachments/1038329663187062804/1064315236577984532/AICONNOR___forest_mythic_Al__vibrant_ultra_realistic_golden_and_43eea65b-ab25-4755-ba2b-3d930995261f.png');
+  background-size: cover;
+  background-position: center;
+}
+.container-wrapper{
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 100%;
+}
+.container-1{
+  color: white;
+  font-weight: 700;
+  display: flex;
+  margin-top: 1rem;
+  padding: 1rem;
+}
+.container-1 a{
+  color: white;
+  border-bottom: 0.25rem solid transparent;
+}
+.container-1 a:hover{
+  border-bottom-color: rgba(255,255,255,0.8);
+}
+.container-2{
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  color: wheat;
+  margin-bottom: 35vh;
+}
+body{
+  overflow-x: hidden;
+}
+.carousel-height{
+  height: 20vh;
+}
+.home-row{
+  height: 80vh;
+}
+.img-height{
+  height: 50vh;
+  width: auto;
+}
+.textDiv{
+  font-weight: 800;
+}
+.card-hover{
+  scale: 1;
+  transition: all .3s;
+}
+.card-hover:hover{
+  scale: 1.04;
+}
+@media (max-width: 576px) { 
+  .card-hover{
+    padding: 1rem;
+    margin: .5rem;
+  }
+  .card-hover:hover{
+    scale: 1;
+  }
+ }
