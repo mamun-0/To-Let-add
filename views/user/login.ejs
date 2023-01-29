@@ -1,19 +1,25 @@
 <% layout('layout/boilerplate')%>
 
-<div class="container my-3">
+<div class="container justify-content-center align-items-center my-3">
     <div class="row">
-        <div class="col-6 offset-3">
-            <form action="/user/login" method="POST">
-                <div class="form-group my-3">
-                    <label for="username">Username</label>
-                    <input type="text" name="username" class="form-control" max="15" required>
+        <div class="col-6 offset-md-3 col-xl-4 offset-xl-4">
+            <div class="card shadow">
+                <img class="card-img-top" src="https://wp-tid.zillowstatic.com/bedrock/app/uploads/sites/5/2022/08/Rent_a_home.webp" alt="card-top-image">
+                <div class="card-body">
+                    <h5 class="card-title">Login</h5>
+                    <form action="/user/login" method="POST">
+                        <div class="form-group my-3">
+                            <label for="username">Username</label>
+                            <input type="text" name="username" class="form-control" max="15" autofocus required>
+                        </div>
+                        <div class="form-group my-3">
+                            <label for="password">Password</label>
+                            <input type="password" name="password" class="form-control" required>
+                        </div>
+                        <button class="btn btn-lg btn-primary btn-block">Login</button>
+                    </form>
                 </div>
-                <div class="form-group my-3">
-                    <label for="password">Password</label>
-                    <input type="password" name="password" class="form-control" required>
-                </div>
-                <button class="btn btn-lg btn-primary">Login</button>
-            </form>
+            </div>
         </div>
     </div>
 </div>
