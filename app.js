@@ -57,12 +57,15 @@ app.engine('ejs', ejsMate);
 app.set('view engine', 'ejs');
 app.set('views', path.join(__dirname, 'views'));
 
+app.get('/', (req,res)=>{
+  res.render('home/index');
+})
 //Router
 app.use('/mess', messRouter);
 app.use('/user', userRouter);
 
 app.all('*', (req, res, next) => {
-  next(new AppError(404, 'Page not found'));
+  res.render('404/404')
 });
 app.use((err, req, res, next) => {
   const { status = 500 } = err;
