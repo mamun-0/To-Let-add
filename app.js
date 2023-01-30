@@ -13,6 +13,7 @@ const flash = require('connect-flash');
 const passport = require('passport');
 const localStrategy = require('passport-local');
 const User = require('./models/user');
+const mongoSanitize = require('express-mongo-sanitize');
 mongoose.set('strictQuery', false);
 mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
   console.log('Database connected');
@@ -21,6 +22,7 @@ mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
 //middleware
 app.use(express.urlencoded({ extended: true }));
 app.use(methodOverride('_method'));
+app.use(mongoSanitize());
 app.use(
   session({
     secret: 'thisisoursillySecret',
