@@ -14,8 +14,9 @@ const localStrategy = require('passport-local');
 const User = require('./models/user');
 const mongoSanitize = require('express-mongo-sanitize');
 const MongoStore = require('connect-mongo');
+const dbURL = process.env.DB_URL || 'mongodb://localhost:27017/toLet';
 mongoose.set('strictQuery', false);
-mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
+mongoose.connect(dbURL).then(() => {
   console.log('Database connected');
 });
 
@@ -30,7 +31,7 @@ app.use(
       ttl: 24 * 60 * 60,
     }),
     name: 'session',
-    secret: 'thisisoursillySecret',
+    secret: process.env.COOKIE_SECRET,
     resave: true,
     saveUninitialized: true,
     cookie: {
@@ -81,6 +82,7 @@ app.use((err, req, res, next) => {
   }
   res.status(status).render('error/error', { err });
 });
-app.listen(3000, () => {
-  console.log('Server is running on port 3000');
+const port = process.env.PORT || 3000;
+app.listen(port, () => {
+  console.log(`Server is running on port ${port}`);
 });
