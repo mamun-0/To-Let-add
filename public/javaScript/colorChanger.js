@@ -10,4 +10,3 @@ for (let x of textDiv) {
     x.style.color = makeColor();
   }, 500);
 }
-console.log('Its working')
