@@ -64,6 +64,8 @@ router.put(
     const { mess } = req.body;
     const {filename, path} = req.file;
     const { id } = req.params;
+    const { image } = await Proprietor.findById(id);
+    await cloudinary.uploader.destroy(image.filename);
     mess.image = {filename, path};
     await Proprietor.findByIdAndUpdate(id, mess);
     req.flash('success', 'successfully edited.');
