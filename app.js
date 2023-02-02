@@ -7,13 +7,13 @@ const ejsMate = require('ejs-mate');
 const methodOverride = require('method-override');
 const messRouter = require('./router/mess');
 const userRouter = require('./router/user');
-const AppError = require('./utils/AppError');
 const session = require('express-session');
 const flash = require('connect-flash');
 const passport = require('passport');
 const localStrategy = require('passport-local');
 const User = require('./models/user');
 const mongoSanitize = require('express-mongo-sanitize');
+const MongoStore = require('connect-mongo');
 mongoose.set('strictQuery', false);
 mongoose.connect('mongodb://localhost:27017/toLet').then(() => {
   console.log('Database connected');
@@ -25,6 +25,11 @@ app.use(methodOverride('_method'));
 app.use(mongoSanitize());
 app.use(
   session({
+    store: MongoStore.create({
+      mongoUrl: dbURL,
+      ttl: 24 * 60 * 60,
+    }),
+    name: 'session',
     secret: 'thisisoursillySecret',
     resave: true,
     saveUninitialized: true,
