@@ -1,9 +1,9 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Welcome to to-Let</title>
     <link
       rel="stylesheet"
@@ -12,93 +12,126 @@
       crossorigin="anonymous"
     />
     <link rel="stylesheet" href="/css/style.css" />
-</head>
-<body>
+  </head>
+  <body>
     <!-- Hero section -->
     <div class="container-fluid main-container">
-        <div class="container-wrapper">
-            <div class="container-1">
-                <h3>To-Let</h3>
-                <nav class="nav ml-auto">
-                    <a class="nav-link active" href="/">Home</a>
-                    <a class="nav-link" href="/mess">Mess</a>
-                    <% if(!currentUser){ %>
-                    <a class="nav-link" href="/user/login">Login</a>
-                    <a class="nav-link" href="/user/register">Register</a>
-                    <% }else{ %>
-                    <a class="nav-link" href="/user/logout">Logout</a>
-                    <% } %>
-                </nav>
-            </div>
-            <div class="container-2">
-                <h2>Welcome to to-Let add near BSMRSTU</h2>
-                <p class="py-3 text-center">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis exercitationem alias, veritatis deleniti nam quasi? Nobis perferendis quod magnam blanditiis aliquam dicta, rerum alias corrupti amet fugit? Quas, voluptatibus laboriosam?</p>
-                <a href="/mess" class="btn btn-lg btn-outline-info">Discover All Mess</a>
+      <div class="container-wrapper">
+        <div class="container-1">
+          <h3>To-Let</h3>
+          <nav class="nav ml-auto">
+            <a class="nav-link active" href="/">Home</a>
+            <a class="nav-link" href="/mess">Mess</a>
+            <% if(!currentUser){ %>
+            <a class="nav-link" href="/user/login">Login</a>
+            <a class="nav-link" href="/user/register">Register</a>
+            <% }else{ %>
+            <a class="nav-link" href="/user/logout">Logout</a>
+            <% } %>
+          </nav>
         </div>
+        <div class="container-2">
+          <h1 class="headding-color">Welcome to to-Let add near BSMRSTU</h1>
+          <p class="py-3 text-center paragraph-color">
+            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Debitis
+            exercitationem alias, veritatis deleniti nam quasi? Nobis
+            perferendis quod magnam blanditiis aliquam dicta, rerum alias
+            corrupti amet fugit? Quas, voluptatibus laboriosam?
+          </p>
+          <a href="/mess" class="btn btn-lg btn-outline-info"
+            >Discover All Mess</a
+          >
         </div>
+      </div>
     </div>
     <p class="display-4 text-center my-5 underline">Section titile 1</p>
     <div class="row text-center">
-        <div class="col-md-6">
-          <h2 class="text-center">Text Here</h2>
-          <p>
-            With 500+ student organizations (chocolate science, anyone?), nearly
-            40 Greek-letter and independent living groups, chaplains for more
-            than 20 faith traditions, and a commitment to diversity and
-            inclusion, student life at MIT offers a welcoming place for
-            everyone. To complement their academics and research, students
-            choose their own extracurricular adventures, from a spectacular
-            array of ways to participate in music, dance, and sports to dozens
-            of groups that savor and celebrate cultures from around the world.
-            To help students navigate challenges, MIT offers a strong support
-            network (bolstered by occasional visits from puppies, pigs, and
-            pygmy goats).
-          </p>
-        </div>
-        <div class="col-md-6">
-          <img
-            class="img-height"
-            src="https://cdn.discordapp.com/attachments/1038329663187062804/1063848250886598686/AICONNOR__bfc71712-1eea-4f2b-9112-e0af06c8fcbb.png"
-            alt="student-life"
-          />
-        </div>
+      <div class="col-md-6">
+        <h2 class="text-center">Text Here</h2>
+        <p>
+          With 500+ student organizations (chocolate science, anyone?), nearly
+          40 Greek-letter and independent living groups, chaplains for more than
+          20 faith traditions, and a commitment to diversity and inclusion,
+          student life at MIT offers a welcoming place for everyone. To
+          complement their academics and research, students choose their own
+          extracurricular adventures, from a spectacular array of ways to
+          participate in music, dance, and sports to dozens of groups that savor
+          and celebrate cultures from around the world. To help students
+          navigate challenges, MIT offers a strong support network (bolstered by
+          occasional visits from puppies, pigs, and pygmy goats).
+        </p>
       </div>
-      <div class="container">
-        <p class="display-4 text-center my-5">Section title 2</p>
-        <div class="row">
-          <div class="col-md-4">
-            <div class="card card-hover">
-              <img src="https://wp-tid.zillowstatic.com/bedrock/app/uploads/sites/5/2022/07/Sell_a_home.webp" class="card-img-top" alt="card-img-1">
-              <div class="card-body">
-                <h5 class="card-title">Area A</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-hover">
-              <img src="https://wp-tid.zillowstatic.com/bedrock/app/uploads/sites/5/2022/07/Buy_a_home.webp" class="card-img-top" alt="card-img-1">
-              <div class="card-body">
-                <h5 class="card-title">Area B</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
-            </div>
-          </div>
-          <div class="col-md-4">
-            <div class="card card-hover">
-              <img src="https://wp-tid.zillowstatic.com/bedrock/app/uploads/sites/5/2022/08/Rent_a_home.webp" class="card-img-top" alt="card-img-1">
-              <div class="card-body">
-                <h5 class="card-title">Area C</h5>
-                <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-              </div>
+      <div class="col-md-6">
+        <img
+          class="img-height"
+          src="https://cdn.discordapp.com/attachments/1038329663187062804/1063848250886598686/AICONNOR__bfc71712-1eea-4f2b-9112-e0af06c8fcbb.png"
+          alt="student-life"
+        />
+      </div>
+    </div>
+    <div class="container">
+      <p class="display-4 text-center my-5">Section title 2</p>
+      <div class="row">
+        <div class="col-md-4">
+          <div class="card card-hover">
+            <img
+              src="https://wp-tid.zillowstatic.com/bedrock/app/uploads/sites/5/2022/07/Sell_a_home.webp"
+              class="card-img-top"
+              alt="card-img-1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Area A</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
             </div>
           </div>
         </div>
+        <div class="col-md-4">
+          <div class="card card-hover">
+            <img
+              src="https://wp-tid.zillowstatic.com/bedrock/app/uploads/sites/5/2022/07/Buy_a_home.webp"
+              class="card-img-top"
+              alt="card-img-1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Area B</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
+        <div class="col-md-4">
+          <div class="card card-hover">
+            <img
+              src="https://wp-tid.zillowstatic.com/bedrock/app/uploads/sites/5/2022/08/Rent_a_home.webp"
+              class="card-img-top"
+              alt="card-img-1"
+            />
+            <div class="card-body">
+              <h5 class="card-title">Area C</h5>
+              <p class="card-text">
+                Some quick example text to build on the card title and make up
+                the bulk of the card's content.
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
-      <div class="container mb-3">
-        <p class="display-4 text-center my-5">Highlight Mess Area on google map</p>
-        <iframe src="https://www.google.com/maps/d/u/0/embed?mid=1c8SGCK67HsVGeIS8Sn9NkapTmFXA6Wg&ehbc=2E312F" width="100%" height="400"></iframe>
-      </div>
+    </div>
+    <div class="container mb-3">
+      <p class="display-4 text-center my-5">
+        Highlight Mess Area on google map
+      </p>
+      <iframe
+        src="https://www.google.com/maps/d/u/0/embed?mid=1c8SGCK67HsVGeIS8Sn9NkapTmFXA6Wg&ehbc=2E312F"
+        width="100%"
+        height="400"
+      ></iframe>
+    </div>
     <script
       src="https://cdn.jsdelivr.net/npm/jquery@3.5.1/dist/jquery.slim.min.js"
       integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj"
@@ -115,5 +148,5 @@
       crossorigin="anonymous"
     ></script>
     <%- include('../partials/footer') %>
-</body>
+  </body>
 </html>
