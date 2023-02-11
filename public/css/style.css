@@ -3,77 +3,83 @@
   height: 100%;
   object-fit: cover;
 }
-.show-card-img{
+.show-card-img {
   height: 55vh;
   object-fit: cover;
 }
-.bg-dark{
+.bg-dark {
   background-color: #000 !important;
 }
-.main-container{
+.main-container {
   width: 100vw;
   height: 100vh;
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)),
-  url('https://cdn.discordapp.com/attachments/1038329663187062804/1064315236577984532/AICONNOR___forest_mythic_Al__vibrant_ultra_realistic_golden_and_43eea65b-ab25-4755-ba2b-3d930995261f.png');
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url("https://images.pexels.com/photos/460695/pexels-photo-460695.jpeg?cs=srgb&dl=pexels-pixabay-460695.jpg&fm=jpg");
   background-size: cover;
   background-position: center;
 }
-.container-wrapper{
+.container-wrapper {
   display: flex;
   flex-direction: column;
   justify-content: space-between;
   height: 100%;
 }
-.container-1{
+.container-1 {
   color: white;
   font-weight: 700;
   display: flex;
   margin-top: 1rem;
   padding: 1rem;
 }
-.container-1 a{
+.container-1 a {
   color: white;
   border-bottom: 0.25rem solid transparent;
 }
-.container-1 a:hover{
-  border-bottom-color: rgba(255,255,255,0.8);
+.container-1 a:hover {
+  border-bottom-color: rgba(255, 255, 255, 0.8);
 }
-.container-2{
+.container-2 {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: wheat;
   margin-bottom: 35vh;
 }
-body{
+body {
   overflow-x: hidden;
 }
-.carousel-height{
+.carousel-height {
   height: 20vh;
 }
-.home-row{
+.home-row {
   height: 80vh;
 }
-.img-height{
+.img-height {
   height: 50vh;
   width: auto;
 }
-.textDiv{
+.textDiv {
   font-weight: 800;
 }
-.card-hover{
+.card-hover {
   scale: 1;
-  transition: all .3s;
+  transition: all 0.3s;
 }
-.card-hover:hover{
+.card-hover:hover {
   scale: 1.04;
 }
-@media (max-width: 576px) { 
-  .card-hover{
+@media (max-width: 576px) {
+  .card-hover {
     padding: 1rem;
-    margin: .5rem;
+    margin: 0.5rem;
   }
-  .card-hover:hover{
+  .card-hover:hover {
     scale: 1;
   }
- }
+}
+.headding-color {
+  color: #fff;
+}
+.paragraph-color {
+  color: #fff;
+}
