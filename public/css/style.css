@@ -79,7 +79,20 @@ body {
 }
 .headding-color {
   color: #fff;
+  font-size: 3rem;
+  font-weight: 700;
 }
 .paragraph-color {
   color: #fff;
+  font-size: 22px;
+}
+.discover-button {
+  margin-top: 100px;
+}
+.section-title {
+  font-weight: 600;
+}
+.formating-text {
+  text-align: justify;
+  margin-left: 10px;
 }
