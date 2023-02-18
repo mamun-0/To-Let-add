@@ -38,12 +38,16 @@
 .container-1 a:hover {
   border-bottom-color: rgba(255, 255, 255, 0.8);
 }
+/* Main section */
 .container-2 {
   display: flex;
   flex-direction: column;
   align-items: center;
   color: wheat;
   margin-bottom: 35vh;
+}
+.top-section {
+  margin-top: 50px;
 }
 body {
   overflow-x: hidden;
@@ -95,4 +99,35 @@ body {
 .formating-text {
   text-align: justify;
   margin-left: 10px;
+}
+
+/* For footer */
+.footer-section {
+  background-color: black;
+  color: #fff;
+}
+.first-section {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
+.second-section {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-top: 40px;
+}
+.social-logo {
+  color: #fff;
+}
+.fa:hover {
+  color: blue;
+}
+.paragraph-section {
+  width: 65%;
+  text-align: center;
+  margin-top: 15px;
 }
